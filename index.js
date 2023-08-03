@@ -84,6 +84,126 @@
 
 
 
+//nodejs is async language means not denpend on previous operation.
+
+
+//making basic API SERVER
+// const http = require("http");
+// const data = require("./data");
+
+// http.createServer((req, res) => {
+//   res.writeHead(200 , {'Content-Type': 'application/json'});
+//   res.write(JSON.stringify(data));
+//   res.end();
+// }).listen(5000);
+
+
+//input from command line or create file with input command
+// console.log(process.argv[2])
+
+//File creation
+// const fs =require('fs');
+// const input =process.argv;
+
+// if(input[2]=='add')
+// {
+//     fs.writeFileSync(input[3],input[4])
+// }else if(input[2]=='remove')
+// {
+//     fs.unlinkSync(input[3])
+// }
+// else{
+//     console.log("invalid input") 
+// }
+
+
+//file creation using file module or make files in folder or use path modules 
+// const fs= require('fs');
+// const path=require('path');
+// const dirPath=path.join(__dirname,'files');
+// for(i=0;i<5;i++)
+// {
+//     fs.writeFileSync(dirPath+"/hello"+i+".txt","a simple txt file")
+// }
+
+
+//GET file names and print
+// fs.readdir(dirPath,(err,files)=>{
+//     files.forEach((item)=>{
+//               console.log("file name is ",item)
+//     })
+
+// })
+
+
+//CRUD operations with file system
+ const fs= require('fs');
+ const path=require('path');
+ const dirPath=path.join(__dirname,'crud');
+ const filePath=`${dirPath}/apple.txt`;
+
+ //1>write=
+// //fs.writeFileSync(filePath,'This is a simple text file');
+
+//2>Read=
+// fs.readFile(filePath,'utf8',(err,item)=>{          //UTF-8 stands for “Unicode Transformation Format - 8 bits or he default character set for HTML5
+//      console.log(item);
+// })
+
+//3>Append=
+// fs.appendFile(filePath,'and file name is apple.txt',(err)=>{
+//     if(!err) console.log("file is updated")
+// })
+
+// 4>rename=
+// fs.rename(filePath,`${dirPath}/fruit.txt`,(err)=>{
+//     if(!err) console.log("file name is updated")
+// })
+
+//fs.unlinkSync(`${dirPath}/fruit.txt`) //to delete this file
+
+//asynchronous = second task do not wait to finish first task
+
+
+//asynchronus nodejs example
+// let a=10;
+// let b=0;
+
+// setTimeout(()=>{
+//     b=20;
+// },2000)
+
+// console.log(a+b)
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Handle asynchronus data in node js=
+// let a=20;
+// let b=0;
+
+// let waitingData= new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//         resolve(30)
+//     },2000)
+// })
+
+// waitingData.then((data)=>{
+//     b=data;
+//     console.log(a+b)
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
